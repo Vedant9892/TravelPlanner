@@ -1,0 +1,16 @@
+{
+  "name": "itinerary-trip-planner-server",
+  "version": "0.0.1",
+  "description": "Backend for Itinerary Trip Planner",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0"
+  }
+}
