@@ -5,7 +5,6 @@ const activitySchema = new mongoose.Schema({
   description: String,
   time: String,
 }, { _id: false })
-
 const daySchema = new mongoose.Schema({
   day: Number,
   activities: [activitySchema],
