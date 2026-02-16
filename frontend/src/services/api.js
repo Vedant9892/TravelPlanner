@@ -23,6 +23,16 @@ export async function loginUser(body) {
   return data
 }
 
+// GET /api/auth/me - get current user (send token in Authorization header)
+export async function getCurrentUser(token) {
+  const res = await fetch(`${API_BASE}/auth/me`, {
+    headers: { Authorization: `Bearer ${token}` },
+  })
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) throw new Error(data.error || 'Failed to fetch profile')
+  return data
+}
+
 // POST /api/plan - create trip request, get generated plan id
 export async function createPlan(formData) {
   const res = await fetch(`${API_BASE}/plan`, {
