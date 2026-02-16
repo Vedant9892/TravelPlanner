@@ -1,40 +1,19 @@
-// Base URL for API calls (Vite proxy forwards /api to backend)
 const API_BASE = '/api'
 
-export async function getTrips() {
-  const res = await fetch(`${API_BASE}/trips`)
-  if (!res.ok) throw new Error('Failed to fetch trips')
-  return res.json()
-}
-
-export async function getTripById(id) {
-  const res = await fetch(`${API_BASE}/trips/${id}`)
-  if (!res.ok) throw new Error('Failed to fetch trip')
-  return res.json()
-}
-
-export async function createTrip(data) {
-  const res = await fetch(`${API_BASE}/trips`, {
+// POST /api/plan - create trip request, get generated plan id
+export async function createPlan(formData) {
+  const res = await fetch(`${API_BASE}/plan`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
+    body: JSON.stringify(formData),
   })
-  if (!res.ok) throw new Error('Failed to create trip')
+  if (!res.ok) throw new Error('Failed to create plan')
   return res.json()
 }
 
-export async function updateTrip(id, data) {
-  const res = await fetch(`${API_BASE}/trips/${id}`, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-  if (!res.ok) throw new Error('Failed to update trip')
-  return res.json()
-}
-
-export async function deleteTrip(id) {
-  const res = await fetch(`${API_BASE}/trips/${id}`, { method: 'DELETE' })
-  if (!res.ok) throw new Error('Failed to delete trip')
+// GET /api/plan/:id - get generated plan
+export async function getPlan(id) {
+  const res = await fetch(`${API_BASE}/plan/${id}`)
+  if (!res.ok) throw new Error('Failed to fetch plan')
   return res.json()
 }

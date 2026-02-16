@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer style={styles.footer}>
-      <p>Itinerary Trip Planner &copy; {new Date().getFullYear()}</p>
+      <p>AI Trip Planner &copy; {new Date().getFullYear()}</p>
     </footer>
   )
 }
