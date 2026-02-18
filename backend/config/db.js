@@ -5,7 +5,6 @@ if (!MONGODB_URI || (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.start
   MONGODB_URI = 'mongodb://localhost:27017/itinerary-planner'
   console.warn('MONGODB_URI missing or invalid in .env; using localhost. Expected: mongodb://... or mongodb+srv://...')
 }
-
 export async function connectDB() {
   try {
     await mongoose.connect(MONGODB_URI)
