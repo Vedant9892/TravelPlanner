@@ -19,7 +19,6 @@ app.get('/api/health', (req, res) => {
   res.json({ ok: true, message: 'Server is running' })
 })
 
-// Connect to MongoDB and start server
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
