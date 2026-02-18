@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-
 const itinerarySchema = new mongoose.Schema(
   {
     tripId: { type: mongoose.Schema.Types.ObjectId, ref: 'Trip', required: true },
@@ -8,6 +7,6 @@ const itinerarySchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
-
+//itenary
 const Itinerary = mongoose.model('Itinerary', itinerarySchema)
 export default Itinerary
