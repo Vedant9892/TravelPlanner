@@ -16,7 +16,6 @@ app.use(express.json())
 app.use('/api/trips', tripRoutes)
 app.use('/api/auth', authRoutes)
 
-// Health check
 app.get('/api/health', (req, res) => {
   res.json({ ok: true, message: 'Server is running' })
 })
